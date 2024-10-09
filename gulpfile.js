@@ -62,8 +62,6 @@ async function scripts() {
         'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
         /* 'node_modules/gsap/dist/all.js', */
         'app/js/main.js',
-        /* 'node_modules/swiper/swiper-bundle.min.js', */
-        /* 'node_modules/tailwindcss/swiper-bundle.min.js', */
     ])
         .pipe(concat('main.min.js'))
         .pipe(dest('app/js'))

@@ -126,7 +126,7 @@ html {
 
 body {
     @include fontIr(17, 400, 25, $white);
-    background: $bg;
+    background: $black;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -236,21 +236,13 @@ label {
 
 /**********************
     **********************
-       LANG LOGIC
+       PAGE HEADER
     **********************
 **********************/
-
-
-.en {}
-
-.ru,
-.fr,
-.en {
-    display: none;
-
-    &.active {
-        display: flex;
-    }
+.page__header {
+    background-image: url('../images/flags.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /**********************
@@ -354,11 +346,37 @@ label {
         border-radius: 5px;
         padding: .5rem .7rem;
         transition: .4s all;
-        width: 15.625rem ;
+        width: 15.625rem;
 
         &:hover {
             background: #03a4d5da;
             transition: .4s all;
+        }
+    }
+}
+
+/**********************
+    **********************
+       SURVEY
+    **********************
+**********************/
+.survey {
+    .form {
+        &-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: .5rem;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                gap: .2rem;
+            }
+
+            div:not(:last-child) {
+                margin-bottom: 1rem;
+            }
         }
     }
 }

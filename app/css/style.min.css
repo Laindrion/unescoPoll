@@ -13132,7 +13132,7 @@ body {
   font-weight: 400;
   line-height: 1.5625rem;
   color: oklch(100% 0 0);
-  background: oklch(97.91% 0 0);
+  background: oklch(0% 0 0);
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13271,20 +13271,13 @@ label textarea {
 
 /**********************
     **********************
-       LANG LOGIC
+       PAGE HEADER
     **********************
 **********************/
-.ru,
-.fr,
-.en {
-  display: none;
-}
-.ru.active,
-.fr.active,
-.en.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.page__header {
+  background-image: url("../images/flags.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /**********************
@@ -13425,6 +13418,38 @@ label textarea {
   -webkit-transition: 0.4s all;
   -o-transition: 0.4s all;
   transition: 0.4s all;
+}
+
+/**********************
+    **********************
+       SURVEY
+    **********************
+**********************/
+.survey .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.survey .form-group div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.survey .form-group div:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 /**********************
