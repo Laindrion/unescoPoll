@@ -1,0 +1,445 @@
+@import 'node_modules/bootstrap/dist/css/bootstrap';
+@import 'node_modules/magnific-popup/dist/magnific-popup';
+@import 'node_modules/reset.css/reset';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import '_fonts';
+
+/**********************
+    **********************
+        VARIABLES
+    **********************
+**********************/
+$black: oklch(0% 0 0);
+$white: oklch(100% 0 0);
+
+$title: oklch(26.49% 0.049 260.67);
+$title_card: oklch(51.73% 0 0);
+$text: oklch(33.68% 0 0);
+$accordion_text: oklch(62.01% 0 0);
+$sub_text: oklch(33.68% 0 0);
+
+$bg: oklch(97.91% 0 0);
+$bg_gradient: linear-gradient(139.81deg, oklch(63.64% 0.127 277.55) 22.434%, oklch(73.43% 0.123 223.99) 113.926%);
+$title_bg: oklch(9.69% 0 0 / 11%);
+
+$main: oklch(67.88% 0.117 248.92);
+$second_main: oklch(65.41% 0.12 264.97);
+$submit_btn_bg: oklch(88.53% 0 0);
+$btn_passive: oklch(66.33% 0 0);
+
+$font_Mt: 'Montserrat', sans-serif;
+$font_Ir: 'Inter', sans-serif;
+$font_Al: 'ALS Hauss', sans-serif;
+
+$global_font_size: 16;
+
+/* TEST */
+$olive: oklch(52.53% 0.052 113.5);
+$olive_light: oklch(59.88% 0.023 119.23);
+$olive_gradient: linear-gradient(139.81deg, oklch(52.53% 0.052 113.5) 22.434%, oklch(73.43% 0.123 223.99) 113.926%);
+
+/**********************
+    **********************
+        FUNCTIONS
+    **********************
+**********************/
+/* Put the value in px but without writing px at the end */
+@function pxrem($value) {
+    @return calc($value / $global_font_size)+rem;
+}
+
+/**********************
+    **********************
+        MIXINS
+    **********************
+**********************/
+/* Put it in pixels, it converts them to rem */
+@mixin fontIr($font_size, $font_weight, $line_height, $font_color) {
+    font-family: $font_Ir;
+    font-size: pxrem($font_size);
+    font-weight: $font_weight;
+    line-height: pxrem($line-height);
+    color: $font_color;
+}
+
+@mixin fontMt($font_size, $font_weight, $line_height, $font_color) {
+    font-family: $font_Mt;
+    font-size: pxrem($font-size);
+    font-weight: $font_weight;
+    line-height: pxrem($line-height);
+    color: $font_color;
+}
+
+@mixin fontAl($font_size, $font_weight, $line_height, $font_color) {
+    font-family: $font_Al;
+    font-size: pxrem($font-size);
+    font-weight: $font_weight;
+    line-height: pxrem($line-height);
+    color: $font_color;
+}
+
+
+@mixin pseudo($url, $width, $height) {
+    content: '';
+    position: absolute;
+    background-image: $url;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: pxrem($width);
+    height: pxrem($height);
+}
+
+
+@mixin pseudoItem($width, $height, $bgc) {
+    content: '';
+    position: absolute;
+    width: pxrem($width);
+    height: pxrem($height);
+    background: $bgc;
+}
+
+
+/**********************
+    **********************
+        TEMPLATES
+    **********************
+**********************/
+
+/**********************
+    **********************
+        GLOBAl STYLES
+    **********************
+**********************/
+html {
+    overflow-x: hidden;
+    font-size: $global_font_size + px;
+    background: $black;
+
+    &.open {
+        overflow: hidden;
+    }
+}
+
+::-moz-selection {}
+
+::selection {}
+
+body {
+    @include fontIr(17, 400, 25, $white);
+    background: $bg;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.header.sticky {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.row {
+    row-gap: 1rem;
+}
+
+.section__header {
+    padding: 1.5625rem 0;
+    position: relative;
+    z-index: 0;
+
+    &-text {
+        margin-bottom: 0.9375rem;
+        @include fontIr(14, 500, 25, $title_card);
+    }
+
+    &::after {
+
+        top: 2.25rem;
+        right: -1.5rem;
+        width: 3rem;
+        height: 3rem;
+
+        z-index: -1;
+    }
+}
+
+.logo {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+p {
+    @include fontIr(17, 400, 26, $text);
+}
+
+strong {
+    @include fontIr(17, 600, 26, $title);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    /* text-transform: uppercase; */
+
+    input,
+    textarea {
+        border: none;
+        background: transparent;
+        outline: none;
+        border-bottom: 1px solid $white;
+
+        @include fontMt(18, 400, 23, $white);
+    }
+
+    textarea {
+        height: 5rem;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+    filter: blur(5px);
+    transition: 1s all;
+
+    &.show {
+        transform: translate(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+.close {
+    display: none;
+}
+
+/**********************
+    **********************
+       LANG LOGIC
+    **********************
+**********************/
+
+
+.en {}
+
+.ru,
+.fr,
+.en {
+    display: none;
+
+    &.active {
+        display: flex;
+    }
+}
+
+/**********************
+    **********************
+       MENU
+    **********************
+**********************/
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lang {
+    &__menu {
+        position: relative;
+
+        &::after {
+            @include pseudo(url("../images/arrow.png"), 10, 10);
+            filter: invert(1);
+            right: -1rem;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+        }
+    }
+
+    &__menu-inner {
+        display: none;
+    }
+}
+
+/**********************
+    **********************
+       HERO
+    **********************
+**********************/
+.hero {
+    height: 100vh;
+    background-image: url('../images/flags.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        @include pseudoItem(0, 0, none);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+        opacity: .8;
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        height: 100%;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+
+
+    &__text {
+        color: $white;
+        max-width: 50rem;
+    }
+
+    &__title {
+        @include fontIr(56, 600, 64, $white);
+        max-width: 70rem;
+        font-size: 3.5rem;
+        line-height: 4rem;
+        color: $white;
+    }
+
+    &__link {
+        @include fontAl(18, 400, 24, $white);
+        background: #03a4d5b4;
+        border-radius: 5px;
+        padding: .5rem .7rem;
+        transition: .4s all;
+        width: 15.625rem ;
+
+        &:hover {
+            background: #03a4d5da;
+            transition: .4s all;
+        }
+    }
+}
+
+/**********************
+    **********************
+       FOOTER
+    **********************
+**********************/
+.footer {
+    margin-top: auto;
+}
+
+
+/**********************
+    **********************
+       MEDIA QUERIES
+    **********************
+**********************/
+
+@media (max-width: 1604px) {
+    html {
+        font-size: $global_font_size - 1 + px;
+    }
+}
+
+@media (max-width: 1527px) {
+    html {
+        font-size: $global_font_size - 2 + px;
+    }
+}
+
+@media (max-width: 1480px) {
+    html {
+        font-size: $global_font_size - 3 + px;
+    }
+}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 991px) {
+    html.open {
+        body {
+            position: relative;
+
+            &::after {
+                @include pseudoItem(0, 0, $black);
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                opacity: .6;
+            }
+        }
+
+        .header.secondary {
+            z-index: unset;
+        }
+    }
+}
+
+@media (max-width: 995px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 550px) {}
+
+@media (max-width: 485px) {}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 400px) {}
+
+@media (max-width: 360px) {
+    html {
+        font-size: $global_font_size - 5 + px;
+    }
+}
+
+@media (max-width: 300px) {
+    html {
+        font-size: $global_font_size - 7 + px;
+    }
+}

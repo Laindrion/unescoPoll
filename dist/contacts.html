@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <header class="header secondary">
+        <div class="container">
+            <nav class="menu">
+                <a class="logo" href="index.html">
+                    <img src="images/logo.svg" alt="logo image">
+                </a>
+                <ul class="menu__list">
+                    <a class="close" href="#">
+
+                    </a>
+                    <li class="menu__list-item">
+                        <a href="#" class="menu__list-link">
+                            О нас
+                        </a>
+
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Общая информация
+                                </a>
+                            </li>
+                            <li>
+                                <a href="organisation_structure.html">
+                                    Организационная Структура
+                                </a>
+                            </li>
+                            <li>
+                                <a href="management.html">
+                                    Руководство
+                                </a>
+                            </li>
+                            <li>
+                                <a href="faq.html">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contacts.html">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu__list-item">
+                        <a href="about_uzbekistan.html" class="menu__list-link">
+                            Об Узбекистане
+                        </a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a href="#" class="menu__list-link">
+                            Для СМИ
+                        </a>
+
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Правила аккредитации
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Политика Упоминаний
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu__list-item">
+                        <a href="gallery.html" class="menu__list-link">
+                            Галерея
+                        </a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a href="news.html" class="menu__list-link">
+                            Новости
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="menu__list-inner">
+                    <ul class="lan">
+                        <li>
+                            <a class="lan__link" href="#">
+                                RU
+                            </a>
+
+                            <ul class="lan__inner">
+                                <li>
+                                    <a href="#">
+                                        ENG
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        UZB
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <button class="burger__btn" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<main class="main">
+    <section class="section__header">
+        <div class="container">
+            <p class="section__header-text">
+                Главная/Руководство
+            </p>
+            <h2 class="section__header-title">
+                Контакты
+            </h2>
+        </div>
+    </section>
+    <section class="contacts__details">
+        <div class="container">
+            <div class="contacts__map">
+                <div class="contacts__map-header">
+
+                    <div class="contacts__map-header__item address">
+                        <span>
+                            Местонахождение:
+                        </span>
+                        <a href="#">
+                            ул.Амира Темура 107Б
+                        </a>
+                    </div>
+
+                    <div class="contacts__map-header__item email">
+                        <span>
+                            Почта:
+                        </span>
+                        <a href="matilto:info@interforum.uz">
+                            info@interforum.uz
+                        </a>
+                    </div>
+
+                    <div class="contacts__map-header__item phone">
+                        <span>
+                            Номер телефона:
+                        </span>
+                        <a href="tel:998555080700">
+                            +998 55-508-07-00
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contacts__map-item">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11982.753648588314!2d69.2822592!3d41.3373884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bb1449ce571%3A0x9e652a244ad74f6f!2z0JPQo9CfICJJbnRlcmZvcnVtIg!5e0!3m2!1sru!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts__message">
+        <div class="container">
+            <h2>
+                НАПИШИТЕ НАМ
+            </h2>
+
+            <div class="contacts__message-inner">
+                <span>
+                    Мы свяжемся с вами в ближайшее время
+                </span>
+                <form action="https://interforum.uz/contacts-create" method="POST">
+                    <!-- <input type="hidden" name="_token" value="YDZ8diLDnnpTHpIMF54zyUEjam7WQAJxvXQjQwTo"> -->
+
+                    <label for="name">
+                        Ваше имя*
+                        <input type="text" id="name">
+                    </label>
+                    <label for="phone">
+                        НОМЕР ТЕЛЕФОНА*
+                        <input type="phone" id="phone">
+                    </label>
+                    <label for="message">
+                        СООБЩЕНИЕ
+                        <textarea name="" id="message"></textarea>
+                    </label>
+
+                    <button type="submit">
+                        Оставить заявку
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+
+    <div class="container">
+
+
+        <div class="footer__wrapper">
+
+
+
+
+
+            <div class="footer__message">
+
+
+                <h2>
+
+
+                    СВЯЖИТЕСЬ С НАМИ
+
+
+                </h2>
+
+
+                <a href="contacts.html">
+
+
+                    Связаться
+
+
+                </a>
+
+
+            </div>
+
+
+
+
+
+            <div class="footer__inner">
+
+
+                <ul class="footer__list">
+
+
+                    <h4>
+
+
+                        Компания
+
+
+                    </h4>
+
+
+                    <li>
+
+
+                        <a href="#">
+
+
+                            Общая информация
+
+
+                        </a>
+
+
+                    </li>
+
+
+                    <li>
+
+
+                        <a href="#">
+
+
+                            Организационная структура
+
+
+                        </a>
+
+
+                    </li>
+
+
+                    <li>
+
+
+                        <a href="#">
+
+
+                            Руководство
+
+
+                        </a>
+
+
+                    </li>
+
+
+                    <li>
+
+
+                        <a href="#">
+
+
+                            FAQ
+
+
+                        </a>
+
+
+                    </li>
+
+
+                </ul>
+
+
+
+
+
+                <ul class="footer__list">
+
+
+                    <h4>
+
+
+                        Ресурсы
+
+
+                    </h4>
+
+
+
+
+
+                    <li>
+
+
+                        <a href="gallery.html">
+
+
+                            Галерея
+
+
+                        </a>
+
+
+                    </li>
+
+
+                    <li>
+
+
+                        <a href="#">
+
+
+                            Новости
+
+
+                        </a>
+
+
+                    </li>
+
+
+
+
+
+                    <li>
+
+
+                        <a href="#">
+
+
+                            Об узбекистане
+
+
+                        </a>
+
+
+                    </li>
+
+
+                    <li>
+
+
+                        <a href="#">
+
+
+                            Для СМИ
+
+
+                        </a>
+
+
+                    </li>
+
+
+                </ul>
+
+
+
+
+
+                <div class="footer__info">
+
+
+                    <a href="mailto:info@interforum.uz">
+
+
+                        <span>
+
+
+                            Электронная почта
+
+
+                        </span>
+
+
+                        info@interforum.uz
+
+
+                    </a>
+
+
+                    <a href="tel:998712385767">
+
+
+                        <span>
+
+
+                            Номер телефона
+
+
+                        </span>
+
+
+                        +998 71 238 57 67
+
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="footer__copyright">
+
+
+                <p>
+
+
+                    Copyright © 2024 - InterForum.
+
+
+                </p>
+
+
+
+
+
+                <p>
+
+
+                    Политика конфиденциальности
+
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+
+
+
+<script src="js/tween.js"></script>
+
+
+<script src="js/main.min.js"></script>
+
+
+</body>
+
+
+
+
+
+</html>
