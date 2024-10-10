@@ -245,13 +245,16 @@ label {
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    height: 200px;
+    height: 250px;
     z-index: 0;
+    padding-top: 6rem;
 
     position: relative;
 
     &::before {
         @include pseudoItem(0, 0, none);
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         z-index: -1;
@@ -296,6 +299,10 @@ label {
 
 .logo {
     width: 100px;
+
+    img {
+        filter: brightness(2);
+    }
 }
 
 .lang {
