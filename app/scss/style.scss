@@ -126,7 +126,7 @@ html {
 
 body {
     @include fontIr(17, 400, 25, $white);
-    background: $black;
+    background: $bg;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -143,7 +143,7 @@ body {
 }
 
 .row {
-    row-gap: 1rem;
+    row-gap: 2rem;
 }
 
 .section__header {
@@ -243,6 +243,34 @@ label {
     background-image: url('../images/flags.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    z-index: 0;
+
+    position: relative;
+
+    &::before {
+        @include pseudoItem(0, 0, none);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+        opacity: .4;
+    }
+
+    &-title {
+        @include fontIr(28, 600, 40, $white);
+        text-transform: uppercase;
+    }
+}
+
+.not-active {
+    display: none;
+}
+
+.not-active.active {
+    display: block;
 }
 
 /**********************
@@ -361,6 +389,22 @@ label {
     **********************
 **********************/
 .survey {
+
+    @include fontIr(18, 400, 24, $text);
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+
+    a {
+        color: $main;
+        text-decoration: underline;
+    }
+
+    h4 {
+        font-weight: 500;
+        font-size: 19px;
+    }
+
     .form {
         &-group {
             display: flex;
@@ -368,7 +412,7 @@ label {
             justify-content: flex-end;
             gap: .5rem;
 
-            div{
+            div {
                 display: flex;
                 flex-direction: column;
                 gap: .2rem;
@@ -376,6 +420,17 @@ label {
 
             div:not(:last-child) {
                 margin-bottom: 1rem;
+            }
+        }
+
+        &-checks {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            div {
+                display: flex;
+                gap: 0.5rem;
             }
         }
     }
