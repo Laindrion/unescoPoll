@@ -13506,6 +13506,9 @@ label textarea {
 .survey .form-group div:not(:last-child) {
   margin-bottom: 1rem;
 }
+.survey .form-group .not-active {
+  display: none;
+}
 .survey .form-checks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13516,11 +13519,23 @@ label textarea {
   flex-direction: column;
   gap: 0.5rem;
 }
-.survey .form-checks div {
+.survey .form-checks > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
+}
+.survey .form-checks .not-active {
+  /*  display: none; */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.survey .form-checks .not-active.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /**********************
